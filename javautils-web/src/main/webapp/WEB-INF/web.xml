@@ -17,12 +17,15 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath*:/spring/spring-pts-biz.xml,
-			classpath*:/spring/spring-pts-web.xml
+			classpath*:/spring/spring-pts-web.xml,classpath*:/spring/spring-servlet.xml
 		</param-value>
 	</context-param>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
 
 	<context-param>
@@ -54,17 +57,14 @@
 	</filter-mapping>
 
 	<servlet>
-		<servlet-name>pts</servlet-name>
+		<servlet-name>spring</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>pts</servlet-name>
-		<url-pattern>*.form</url-pattern>
-		<url-pattern>*.htm</url-pattern>
-		<url-pattern>*.service</url-pattern>
-		<url-pattern>*.ajax</url-pattern>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 	<resource-ref>

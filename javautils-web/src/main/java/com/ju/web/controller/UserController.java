@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -29,5 +30,12 @@ public class UserController {
         List<UserDomain> userList = userService.listUser();
         model.addAttribute("userList",userList);
         return "user";
+    }
+    @RequestMapping("showUserList")
+    @ResponseBody
+    public List<UserDomain> showUserList(HttpServletRequest request){
+        log.info("查询所有1用户信息");
+        List<UserDomain> userList = userService.listUser();
+        return userList;
     }
 }
