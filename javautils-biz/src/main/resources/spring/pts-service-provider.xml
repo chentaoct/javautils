@@ -13,7 +13,7 @@
     </bean>
  	
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <<!--dubbo:application name="wt_pts"/>
+   <!-- <dubbo:application name="wt_pts"/>
  
  	<dubbo:registry address="zookeeper://localhost:2181"/>
  	

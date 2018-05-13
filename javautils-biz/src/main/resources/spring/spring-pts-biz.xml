@@ -23,7 +23,7 @@
     <context:component-scan base-package="com.ju.biz" />
     <context:component-scan base-package="com.ju.common" />
 
-	<bean id="velocityEngine"
+<!--	<bean id="velocityEngine"
 		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
 		<property name="velocityProperties">
 			<props>
@@ -36,7 +36,7 @@
 			    <prop key="default.contentType">text/html; charset=UTF-8</prop>
 			</props>
 		</property>
-	</bean>
+	</bean>-->
 
     <!-- enable autowire -->
     <context:annotation-config />
@@ -45,23 +45,7 @@
     <tx:annotation-driven />
 
     <import resource="classpath*:/spring/pts-service-provider.xml"/>
-    <import resource="classpath*:/spring/spring-pts-framework.xml"/>
     <import resource="classpath*:/spring/spring-pts-remote.xml"/>
     <import resource="classpath*:/spring/spring-pts-dao.xml"/>
-    <import resource="classpath*:/spring/spring-pts-quartz.xml"/>
-    <import resource="classpath*:/spring/spring-mq-common.xml"/>
-    <import resource="classpath*:/spring/spring-mq-consumer.xml"/>
-    <import resource="classpath*:/spring/spring-mq-sender.xml"/>
-    <import resource="classpath*:/spring/spring-redis-context.xml"/>
-    
-    
-    <aop:aspectj-autoproxy/>  
-    <bean id="logAspect" class="com.wt.pts.biz.aop.LogAspect"/>     
-     <aop:config>   
-        <aop:aspect ref="logAspect">   
-            <aop:around method="doSystemLog" pointcut="execution(* com.wt.pts.biz.export.QryProductServiceImpl.buyProductNew(..))"/>
-            <aop:around method="doSystemLog" pointcut="execution(* com.wt.pts.biz.export.QryProductServiceImpl.sellProduct(..))"/>
-            <aop:around method="doSystemLog" pointcut="execution(* com.wt.pts.biz.export.QryProductServiceImpl.transferProduct(..))"/>   
-        </aop:aspect>   
-    </aop:config>
+
 </beans>
