@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="GBK" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
@@ -11,7 +11,7 @@
         </layout>
     </appender>
 
-    <appender name="ELP-ALL" class="com.wt.foss.common.logger.FossAppender">
+    <appender name="ELP-ALL" class="org.apache.log4j.DailyRollingFileAppender">
         <param name="file" value="/srv/logs/foss/foss-all.log" />
         <param name="append" value="true" />
         <param name="datePattern" value="'_'yyyy-MM-dd" />
@@ -51,7 +51,7 @@
     </logger>
     <logger name="com.mybatis" additivity="true">
         <level value="info" />
-        <appender-ref ref="ELP-ERROR" />
+        <appender-ref ref="console" />
     </logger>
     <logger name="java.sql.Connection" additivity="true">
         <level value="ERROR" />
@@ -59,15 +59,15 @@
     </logger>
     <logger name="java.sql.Statement" additivity="false">
         <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
+        <appender-ref ref="console" />
     </logger>
     <logger name="java.sql.PreparedStatement" additivity="true">
         <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
+        <appender-ref ref="console" />
     </logger>
     <logger name="java.sql.ResultSet" additivity="true">
         <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
+        <appender-ref ref="console" />
     </logger>
     <logger name="org.apache" additivity="true">
         <level value="ERROR" />
