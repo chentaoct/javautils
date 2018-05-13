@@ -54,24 +54,19 @@
         <appender-ref ref="console" />
     </logger>
     <logger name="java.sql.Connection" additivity="true">
-        <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
+        <level value="DEBUG" />
     </logger>
     <logger name="java.sql.Statement" additivity="false">
-        <level value="ERROR" />
-        <appender-ref ref="console" />
+        <level value="DEBUG" />
     </logger>
     <logger name="java.sql.PreparedStatement" additivity="true">
-        <level value="ERROR" />
-        <appender-ref ref="console" />
+        <level value="DEBUG" />
     </logger>
     <logger name="java.sql.ResultSet" additivity="true">
-        <level value="ERROR" />
-        <appender-ref ref="console" />
+        <level value="DEBUG" />
     </logger>
     <logger name="org.apache" additivity="true">
         <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
     </logger>
     <logger name="com.alibaba" additivity="true">
         <level value="ERROR" />

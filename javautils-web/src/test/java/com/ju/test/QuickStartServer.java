@@ -67,6 +67,7 @@ public class QuickStartServer {
 		DataSource ds;
 		try {
 			WebAppContext context = (WebAppContext) server.getHandler();
+
 			ds = BasicDataSourceFactory.createDataSource(properties);
 			Resource resource = new Resource(context, "ju", ds);
 			return resource;
