@@ -60,7 +60,7 @@
 	</bean> -->
 
     
-    <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/pts" />
+    <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/ju" />
     
 
     <!-- transaction manager, use JtaTransactionManager for global tx -->

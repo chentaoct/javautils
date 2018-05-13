@@ -1,4 +1,4 @@
-package com.ju.model.basedomain.domain;
+package com.ju.model.domain;
 
 public class UserDomain {
     /**

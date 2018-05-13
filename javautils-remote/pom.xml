@@ -33,21 +33,6 @@
             </exclusions>
         </dependency>
         <dependency>
-            <artifactId>pts-common</artifactId>
-            <groupId>com.gm.pts</groupId>
-            <version>${pts.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wt.mha</groupId>
-            <artifactId>mha-service</artifactId>
-            <version>${mha.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wt.mha</groupId>
-            <artifactId>mha-model</artifactId>
-            <version>${mha.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>

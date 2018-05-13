@@ -61,7 +61,7 @@
         <level value="ERROR" />
         <appender-ref ref="open-error" />
     </logger>
-    <logger name="com.wt" additivity="false">
+    <logger name="com.ju" additivity="false">
         <level value="info" />
         <appender-ref ref="open-info" />
         <appender-ref ref="console" />

@@ -2,7 +2,8 @@ package com.ju.dao.common.biz.manager;
 
 
 
-import com.ju.model.basedomain.domain.UserDomain;
+
+import com.ju.model.domain.UserDomain;
 
 import java.util.List;
 

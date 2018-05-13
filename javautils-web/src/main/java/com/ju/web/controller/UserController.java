@@ -2,7 +2,7 @@ package com.ju.web.controller;
 
 
 import com.ju.dao.common.biz.manager.UserService;
-import com.ju.model.basedomain.domain.UserDomain;
+import com.ju.model.domain.UserDomain;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
