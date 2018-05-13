@@ -84,7 +84,7 @@
 
     <root>
         <level value="console" />
-        <appender-ref ref="open-info" />
-        <appender-ref ref="open-error" />
+        <appender-ref ref="open-debug" />
+        <appender-ref ref="open-debug" />
     </root>
 </log4j:configuration>

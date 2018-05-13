@@ -71,8 +71,7 @@
     <!-- define the SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="typeAliasesPackage" value="com.ju.model,
-        com.ju.db, com.ju.dto" />
+        <property name="mapperLocations" value="classpath:com.ju.dao.mapper/*.xml"></property>
     </bean>
 
     <!-- scan for mappers and let them be autowired -->
