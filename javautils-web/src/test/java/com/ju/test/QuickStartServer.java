@@ -68,7 +68,7 @@ public class QuickStartServer {
 		try {
 			WebAppContext context = (WebAppContext) server.getHandler();
 			ds = BasicDataSourceFactory.createDataSource(properties);
-			Resource resource = new Resource(context, "pts", ds);
+			Resource resource = new Resource(context, "ju", ds);
 			return resource;
 		} catch (Exception e) {
 			System.out.println("init the datasource error");

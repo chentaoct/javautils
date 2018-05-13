@@ -23,11 +23,6 @@
     <context:component-scan base-package="com.ju.biz" />
     <context:component-scan base-package="com.ju.common" />
 
-	<bean id="baseManager" class="com.wt.pts.biz.manager.impl.BaseManager">
-	   <property name="staticDomain" value="${pts.staticDomain}"/>
-	   <property name="ptsDomain" value="${pts.domain}"/>
-	</bean>
-
 	<bean id="velocityEngine"
 		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
 		<property name="velocityProperties">

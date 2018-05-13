@@ -1,4 +1,4 @@
-package com.ju.dao.common;
+package com.ju.common;
 
 /**
  * Created by tao on 2018/5/13.

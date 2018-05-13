@@ -1,8 +1,8 @@
-package com.ju.dao.common.biz.manager.impl;
+package com.ju.biz.manager.impl;
 
 
 
-import com.ju.dao.common.biz.manager.UserService;
+import com.ju.biz.manager.UserService;
 import com.ju.dao.mapper.UserDomainExtMapper;
 import com.ju.model.domain.UserDomain;
 import org.springframework.beans.factory.annotation.Autowired;
