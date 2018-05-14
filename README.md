@@ -17,3 +17,8 @@ c)与 DAO 层交互，对 DAO 的业务通用能力的封装。
 # 如何启动
 找到这个类直接运行就可以了com.ju.test.QuickStartServer   
 
+
+# zookeeper
+https://blog.csdn.net/tlk20071/article/details/52028945
+https://www.cnblogs.com/mstmdev/p/5612791.html
+
