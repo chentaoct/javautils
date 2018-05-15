@@ -35,19 +35,16 @@
 
     <logger name="org.springframework" additivity="true">
         <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
-    </logger>
+d    </logger>
 
 
 
     <logger name="org.I0Itec" additivity="true">
         <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
     </logger>
 
     <logger name="org.apache.zookeeper" additivity="true">
         <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
     </logger>
     <logger name="com.mybatis" additivity="true">
         <level value="info" />
@@ -70,13 +67,12 @@
     </logger>
     <logger name="com.alibaba" additivity="true">
         <level value="ERROR" />
-        <appender-ref ref="ELP-ERROR" />
     </logger>
 
     <root>
         <level value="debug" />
         <appender-ref ref="console" />
-        <appender-ref ref="ELP-ALL" />
-        <appender-ref ref="ELP-ERROR" />
+        <!--<appender-ref ref="ELP-ALL" />
+        <appender-ref ref="ELP-ERROR" />-->
     </root>
 </log4j:configuration>

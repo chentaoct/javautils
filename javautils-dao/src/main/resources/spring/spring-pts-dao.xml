@@ -39,28 +39,27 @@
 		#连接的超时时间，默认为半小时。
 		<property name="minEvictableIdleTimeMillis" value="3600000" />
 	</bean> -->
-	<!--  
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"  destroy-method="close">
-		<property name="driverClassName" value="${pts.jdbc.driverClassName}" />
-		<property name="url" value="${pts.jdbc.url}"/>
-		<property name="username" value="${pts.jdbc.username}" />
-		<property name="password" value="${pts.jdbc.password}" />
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
 		<property name="testOnBorrow" value="false" />
 		<property name="testWhileIdle" value="true" />
-		<property name="initialSize" value="${pts.dbcp.initialSize}" />
-		<property name="maxActive" value="${pts.dbcp.maxActive}" />
-		<property name="maxIdle" value="${pts.dbcp.maxIdle}" />
+		<property name="initialSize" value="${ju.dbcp.initialSize}" />
+		<property name="maxActive" value="${ju.dbcp.maxActive}" />
+		<property name="maxIdle" value="${ju.dbcp.maxIdle}" />
 		
-		<property name="minIdle" value="${pts.dbcp.minIdle}" />
-		<property name="validationQuery" value="${pts.dbcp.testsql}" />
-		<property name="removeAbandonedTimeout" value="${pts.dbcp.removeAbandonedTimeout}" />
-		<property name="removeAbandoned" value="${pts.dbcp.removeAbandoned}" />
-		<property name="timeBetweenEvictionRunsMillis" value="${pts.dbcp.timeBetweenEvictionRunsMillis}" />
-		<property name="minEvictableIdleTimeMillis" value="${pts.dbcp.minEvictableIdleTimeMillis}" />
-	</bean> -->
+		<property name="minIdle" value="${ju.dbcp.minIdle}" />
+		<property name="validationQuery" value="${ju.dbcp.testsql}" />
+		<property name="removeAbandonedTimeout" value="${ju.dbcp.removeAbandonedTimeout}" />
+		<property name="removeAbandoned" value="${ju.dbcp.removeAbandoned}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${ju.dbcp.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${ju.dbcp.minEvictableIdleTimeMillis}" />
+	</bean>
 
     
-    <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/ju" />
+  <!--  <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/ju" />-->
     
 
     <!-- transaction manager, use JtaTransactionManager for global tx -->

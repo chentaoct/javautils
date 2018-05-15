@@ -20,7 +20,7 @@ public class QuickStartServer {
     
 	
 
-	public static final int PORT = 8080;
+	public static final int PORT = 9090;
 	public static final String CONTEXT = "/ju";
 	public static final String[] TLD_JAR_NAMES = new String[] { "sitemesh",
 			"spring-webmvc", "springside-core" };
