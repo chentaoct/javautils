@@ -23,4 +23,6 @@ https://blog.csdn.net/tlk20071/article/details/52028945
 https://www.cnblogs.com/mstmdev/p/5612791.html
 zookeeper客户端
 https://blog.csdn.net/liubowin/article/details/77966868?locationNum=6&fps=1
+SpringMVC访问静态资源
+https://www.cnblogs.com/yank/p/4477204.html
 
