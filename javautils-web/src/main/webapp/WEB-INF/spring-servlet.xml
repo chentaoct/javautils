@@ -41,6 +41,7 @@
     <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
     <mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
     <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+    <mvc:resources location="/" mapping="/*.html"/>
     <!-- 完成请求和注解POJO的映射 -->
     <!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/page/" p:suffix=".jsp"/>
