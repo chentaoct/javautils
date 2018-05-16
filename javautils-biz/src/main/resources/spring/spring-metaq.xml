@@ -29,13 +29,19 @@
         <!--  threads to process these messages. -->
         <property name="processThreads" value="10"/>
     </bean>
+    <!--  message listener -->
+    <bean id= "tradeMessageExceptionListener" class="com.ju.biz.mq.metaq.TradeMessageExceptionListener">
+        <!--  threads to process these messages. -->
+        <property name="processThreads" value="10"/>
+    </bean>
     <!--  listener container to subscribe topics -->
     <bean id ="listenerContainer" class="com.taobao.metamorphosis.client.extension.spring.MessageListenerContainer"> 
          <property name="messageSessionFactory" ref="sessionFactory"/>
          <property name="messageBodyConverter" ref="messageBodyConverter"/>
          <property name="subscribers">
              <map>
-                 <entry key-ref="testTopic" value-ref="messageListener"/>
+                 <!--<entry key-ref="testTopic" value-ref="messageListener"/>-->
+                 <entry key-ref="testTopic" value-ref="tradeMessageExceptionListener"/>
              </map>
          </property>
     </bean>
