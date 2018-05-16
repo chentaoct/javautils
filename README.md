@@ -15,7 +15,7 @@ b)对 Service 层通用能力的下沉，如缓存方案、 中间件通用处�
 c)与 DAO 层交互，对 DAO 的业务通用能力的封装。
 
 # 如何启动
-找到这个类直接运行就可以了com.ju.test.QuickStartServer   
+直接运行tomcate就可以了  
 
 
 # zookeeper
