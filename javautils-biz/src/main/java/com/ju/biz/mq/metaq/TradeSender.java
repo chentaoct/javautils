@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 
 public class TradeSender {
     public static void main(final String[] args) throws Exception {
-        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("/spring/spring-metaq.xml");
         // use template to send messages.
         final String topic = "test";
         MetaqTemplate template = (MetaqTemplate) context.getBean("metaqTemplate");
