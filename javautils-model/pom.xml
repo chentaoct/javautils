@@ -10,6 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>javautils-model</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.wt.monitor</groupId>
+            <artifactId>monitor-model</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
