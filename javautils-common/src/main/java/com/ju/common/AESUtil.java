@@ -49,7 +49,7 @@ public class AESUtil {
             cipher.init(Cipher.DECRYPT_MODE, skey);
             output = cipher.doFinal(Base64.decodeBase64(input.getBytes()));
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
         return new String(output);
     }
@@ -70,8 +70,7 @@ public class AESUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //return new String(Base64.encodeBase64(crypted));
-        return new String(crypted);
+        return new String(Base64.encodeBase64(crypted));
     }
 
     /**
