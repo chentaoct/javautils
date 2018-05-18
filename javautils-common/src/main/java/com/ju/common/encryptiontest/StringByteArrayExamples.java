@@ -11,7 +11,8 @@ import java.util.Base64;
 public class StringByteArrayExamples {
     public static void main(String[] args) {
         //testString();
-        testBase64String();
+        //testBase64String();
+        testString();
 
     }
 
@@ -37,7 +38,7 @@ public class StringByteArrayExamples {
 
     private static void testString() {
         //Original String
-        String string = "hello world";
+        String string = "我hello world";
 
         //Convert to byte[]
         byte[] bytes = string.getBytes();
