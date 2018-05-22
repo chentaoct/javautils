@@ -22,25 +22,8 @@
     <!-- enable component scanning (beware that this does not enable mapper scanning!) -->
     <context:component-scan base-package="com.ju.biz" />
     <context:component-scan base-package="com.ju.common" />
-
-<!--	<bean id="velocityEngine"
-		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
-		<property name="velocityProperties">
-			<props>
-				<prop key="resource.loader">class</prop>
-				<prop key="class.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-				</prop>
-				<prop key="velocimacro.library" />
-				<prop key="input.encoding">UTF-8</prop>
-			    <prop key="output.encoding">UTF-8</prop>
-			    <prop key="default.contentType">text/html; charset=UTF-8</prop>
-			</props>
-		</property>
-	</bean>-->
-
     <!-- enable autowire -->
     <context:annotation-config />
-
     <!-- enable transaction demarcation with annotations -->
     <tx:annotation-driven />
 
