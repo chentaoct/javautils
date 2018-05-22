@@ -1,7 +1,6 @@
 package com.ju.biz.manager.impl;
 
 
-
 import com.ju.biz.manager.TransferUploadService;
 import com.ju.common.excel.AppendToFile;
 import com.ju.common.excel.ExportExcel;
@@ -17,7 +16,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by 陈涛 on 2017/5/26.
@@ -30,27 +33,27 @@ public class TransferUploadServiceImpl implements TransferUploadService {
 
     @Override
     public Map<String, String> importExcel(CommonsMultipartFile file, String realPath) {
-        Map<String,String> returnMap = new HashMap<String, String>();
+        Map<String, String> returnMap = new HashMap<String, String>();
         try {
 
             String originalFilename = file.getOriginalFilename();
             //解析excel
             List excelList = new ArrayList();
             HashMap<String, Object> parseExcelAll = ParseExcel.parseExcelAll(file.getInputStream(), 0);
-            excelList= (List) parseExcelAll.get("resultList");
+            excelList = (List) parseExcelAll.get("resultList");
             List<String> columnName = (List<String>) excelList.get(0);
-            if(!"标的编号".equals(columnName.get(0)) || !"打款金额".equals(columnName.get(1)) || !"打款时间".equals(columnName.get(2)) || !"收款账号".equals(columnName.get(3)) ){
+            if (!"标的编号".equals(columnName.get(0)) || !"打款金额".equals(columnName.get(1)) || !"打款时间".equals(columnName.get(2)) || !"收款账号".equals(columnName.get(3))) {
                 LOGGER.error("模板不对");
             }
 
             List<List<String>> errList = new ArrayList<List<String>>();
 
             for (int i = 0; i < excelList.size(); i++) {
-                List<String> rec = (List<String>)excelList.get(i);
+                List<String> rec = (List<String>) excelList.get(i);
                 ArrayList listObject = (ArrayList) excelList.get(i);
                 //每一行的内容,包含原来excel和错误的信息
-                List<String> contentList = (List<String>)excelList.get(i);
-                if(i>0){
+                List<String> contentList = (List<String>) excelList.get(i);
+                if (i > 0) {
                     String proCode = contentList.get(0);
                     String transferAmt = contentList.get(1);
                     String transferDate = contentList.get(2);
@@ -58,7 +61,7 @@ public class TransferUploadServiceImpl implements TransferUploadService {
                 }
 
             }
-            if(0 != errList.size()){
+            if (0 != errList.size()) {
                 Map<String, Object> objOut = new HashMap<String, Object>();
                 objOut.put("resultList", errList);
 
@@ -71,22 +74,22 @@ public class TransferUploadServiceImpl implements TransferUploadService {
                 excelColName.add("错误原因");
                 try {
                     Date now = new Date();
-                    String timeDir = (1900+now.getYear())+"_" + (now.getMonth()+1) + "_" + now.getDate();
-                  //  String errPath = FileConfig.getInstance().getImpErrFilePath();
+                    String timeDir = (1900 + now.getYear()) + "_" + (now.getMonth() + 1) + "_" + now.getDate();
+                    //  String errPath = FileConfig.getInstance().getImpErrFilePath();
 
-                    String errPath = realPath+ File.separator;
+                    String errPath = realPath + File.separator;
                     String[] fn_arr = originalFilename.split("\\.");
                     String format = fn_arr[0].trim();
-                    String timeTag = timeDir + "_"+now.getHours() + "_" + now.getMinutes() + "_" +now.getSeconds();
-                    String createfile=errPath+ timeDir+"/"+format+"("+timeTag+")"+".xls";
+                    String timeTag = timeDir + "_" + now.getHours() + "_" + now.getMinutes() + "_" + now.getSeconds();
+                    String createfile = errPath + timeDir + "/" + format + "(" + timeTag + ")" + ".xls";
                     AppendToFile.createFile(createfile);
                     objIn.put("outputStream", new FileOutputStream(createfile));
                     objIn.put("excelColName", excelColName);
                     objIn.put("fileName", "教师导入");
-                    System.out.println("=======================================1excelColName:"+excelColName);
-                    System.out.println("=======================================createfile:"+createfile);
+                    System.out.println("=======================================1excelColName:" + excelColName);
+                    System.out.println("=======================================createfile:" + createfile);
                     ExportExcel.exportExcel(objIn, objOut);
-                    returnMap.put("failFileName",   timeDir+";"+format+"("+timeTag+")"+".xls");
+                    returnMap.put("failFileName", timeDir + ";" + format + "(" + timeTag + ")" + ".xls");
                     //删除非今天的临时文件及文件夹
                     //AppendToFile.deleteImpErrFileAll(new File(errPath), realPath);
                 } catch (FileNotFoundException e) {
