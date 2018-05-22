@@ -17,7 +17,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath*:/spring/spring-pts-biz.xml,
-			classpath*:/spring/spring-pts-web.xml,classpath*:/spring/spring-servlet.xml
+			classpath*:/spring/spring-servlet.xml
 		</param-value>
 	</context-param>
 

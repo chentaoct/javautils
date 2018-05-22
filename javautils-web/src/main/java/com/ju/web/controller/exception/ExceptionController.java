@@ -13,20 +13,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by tao on 2018/5/16.
  */
 @Controller
-@RequestMapping("exception")
+@RequestMapping("exceptionTest")
 public class ExceptionController {
     @Autowired
     private ExceptionManager exceptionManager;
+
     @RequestMapping("exceptionTest")
     @ResponseBody
-    public BaseOneRespDTO<String> exceptionTest(@RequestParam(value = "name") String name) {
+    public BaseOneRespDTO<String> exceptionTest(@RequestParam(value = "name",required = false) String name) {
         BaseOneRespDTO<String> res = new BaseOneRespDTO<>();
         try {
-            String resStr=  exceptionManager.exceptionTest(name);
-        }catch (BusinessException e){
+            String resStr = exceptionManager.exceptionTest(name);
+        } catch (BusinessException e) {
             res.setErrCode(e.getCode());
             res.setErrMsg(e.getMessage());
-        }catch (Exception e){
+        } catch (Exception e) {
         }
 
         return res;

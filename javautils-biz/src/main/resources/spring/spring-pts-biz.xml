@@ -30,5 +30,5 @@
     <import resource="classpath*:/spring/pts-service-provider.xml"/>
     <!--<import resource="classpath*:/spring/spring-pts-remote.xml"/>-->
     <import resource="classpath*:/spring/spring-pts-dao.xml"/>
-    <import resource="classpath*:/spring/spring-metaq.xml"/>
+<!--    <import resource="classpath*:/spring/spring-metaq.xml"/>-->
 </beans>
