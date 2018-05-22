@@ -3,6 +3,7 @@ package com.ju.web.controller.exception;
 import com.ju.biz.manager.ExceptionManager;
 import com.ju.common.exception.BusinessException;
 import com.ju.model.base.BaseOneRespDTO;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("exceptionTest")
 public class ExceptionController {
+    private static final Logger logger = Logger.getLogger(ExceptionController.class);
     @Autowired
     private ExceptionManager exceptionManager;
 
@@ -25,6 +27,7 @@ public class ExceptionController {
         try {
             String resStr = exceptionManager.exceptionTest(name);
         } catch (BusinessException e) {
+            logger.error(e);
             res.setErrCode(e.getCode());
             res.setErrMsg(e.getMessage());
         } catch (Exception e) {
